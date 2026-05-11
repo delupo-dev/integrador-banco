@@ -44,7 +44,9 @@ def get_source_connection():
             f"SERVER={os.getenv('DB_SOURCE_HOST')};"
             f"DATABASE={os.getenv('DB_SOURCE_NAME')};"
             f"UID={os.getenv('DB_SOURCE_USER')};"
-            f"PWD={os.getenv('DB_SOURCE_PASS')}"
+            f"PWD={os.getenv('DB_SOURCE_PASS')};"
+            "Encrypt=yes;"
+            "TrustServerCertificate=yes;"
         )
         return pyodbc.connect(conn_str)
     except Exception as e:
